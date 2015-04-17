@@ -88,3 +88,9 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 end
+
+Dir[File.join(File.dirname(__FILE__), 'support', '*')].each do |path|
+  require path
+end
+
+require 'active_support/core_ext/string/strip'
