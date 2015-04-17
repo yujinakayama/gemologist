@@ -5,7 +5,7 @@ require 'gemologist/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'gemologist'
-  spec.version       = Gemologist::VERSION
+  spec.version       = Gemologist::Version.to_s
   spec.authors       = ['Yuji Nakayama']
   spec.email         = ['nkymyj@gmail.com']
 
