@@ -13,6 +13,7 @@ module Gemologist
         3.14,
         'foo',
         :foo,
+        //im,
         /foo/im,
         ['foo', 123],
         { 'foo' => 123, bar: false },
@@ -26,6 +27,22 @@ module Gemologist
           it "returns #{value.inspect}" do
             expect(concretized_value).to eq(value)
           end
+        end
+      end
+
+      context 'with a regexp node only with interpolation' do
+        let(:source) { '/#{do_something}/' }
+
+        it 'returns a RuntimeValue' do
+          expect(concretized_value).to be_a(RuntimeValue)
+        end
+      end
+
+      context 'with a regexp node including interpolation' do
+        let(:source) { '/foo#{do_something}/' }
+
+        it 'returns a RuntimeValue' do
+          expect(concretized_value).to be_a(RuntimeValue)
         end
       end
 

@@ -26,8 +26,9 @@ module Gemologist
     end
 
     def concretize_regexp(regexp_node)
-      str_node, *_interporated_nodes, regopt_node = *regexp_node
-      string = str_node.children.first
+      *body_nodes, regopt_node = *regexp_node
+      return RuntimeValue.new(regexp_node) unless body_nodes.all?(&:str_type?)
+      string = body_nodes.map { |str_node| str_node.children.first }.reduce(:+)
       options = regopt_node.children.map(&:to_s).reduce(:+)
       eval("/#{string}/#{options}") # rubocop:disable Eval
     end
