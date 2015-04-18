@@ -1,7 +1,7 @@
 [![Gem Version](http://img.shields.io/gem/v/gemologist.svg?style=flat)](http://badge.fury.io/rb/gemologist)
 [![Dependency Status](http://img.shields.io/gemnasium/yujinakayama/gemologist.svg?style=flat)](https://gemnasium.com/yujinakayama/gemologist)
 [![Build Status](https://travis-ci.org/yujinakayama/gemologist.svg?branch=master&style=flat)](https://travis-ci.org/yujinakayama/gemologist)
-[![Coverage Status](http://img.shields.io/coveralls/yujinakayama/gemologist/master.svg?style=flat)](https://coveralls.io/r/yujinakayama/gemologist)
+[![Coverage Status](https://coveralls.io/repos/yujinakayama/gemologist/badge.svg?branch=master)](https://coveralls.io/r/yujinakayama/gemologist?branch=master)
 [![Code Climate](https://img.shields.io/codeclimate/github/yujinakayama/gemologist.svg?style=flat)](https://codeclimate.com/github/yujinakayama/gemologist)
 
 # Gemologist
