@@ -1,6 +1,3 @@
-require 'bundler'
-require 'ostruct'
-
 module Gemologist
   class GemfileLock
     attr_reader :path
@@ -14,7 +11,7 @@ module Gemologist
     end
 
     def dependencies
-      @dependencies ||= lockfile.specs + [bundler_dependency]
+      lockfile.specs
     end
 
     private
@@ -24,10 +21,6 @@ module Gemologist
         content = File.read(path)
         Bundler::LockfileParser.new(content)
       end
-    end
-
-    def bundler_dependency
-      OpenStruct.new(name: 'bundler', version: Bundler::VERSION)
     end
   end
 end

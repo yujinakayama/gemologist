@@ -18,12 +18,6 @@ module Gemologist
       it 'returns an array of the specifications' do
         expect(dep_names).to include('rake', 'rspec', 'rubocop')
       end
-
-      it 'includes "bundler" dependency' do
-        dependency = lockfile.find_dependency('bundler')
-        expect(dependency.name).to eq('bundler')
-        expect(dependency.version).to eq(Bundler::VERSION)
-      end
     end
   end
 end
