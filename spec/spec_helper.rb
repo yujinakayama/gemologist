@@ -93,4 +93,18 @@ Dir[File.join(File.dirname(__FILE__), 'support', '*')].each do |path|
   require path
 end
 
+if ENV['CI'] || ENV['COVERAGE']
+  require 'simplecov'
+
+  if ENV['CI']
+    require 'coveralls'
+    SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+  end
+
+  SimpleCov.start do
+    add_filter '/spec/'
+    add_filter '/vendor/'
+  end
+end
+
 require 'active_support/core_ext/string/strip'
