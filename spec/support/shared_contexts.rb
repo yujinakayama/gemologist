@@ -9,6 +9,22 @@ RSpec.shared_context 'isolated environment' do
   end
 end
 
+RSpec.shared_context 'with AST', :ast do
+  let(:node) do
+    require 'astrolabe/builder'
+    require 'parser/current'
+    builder = Astrolabe::Builder.new
+    parser = Parser::CurrentRuby.new(builder)
+    parser.parse(source_buffer)
+  end
+
+  let(:source_buffer) do
+    Parser::Source::Buffer.new('(string)').tap do |buffer|
+      buffer.source = source
+    end
+  end
+end
+
 RSpec.shared_context 'with gemspec', :gemspec do
   let!(:gemspec) do
     require 'gemologist/gemspec'

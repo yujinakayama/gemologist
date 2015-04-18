@@ -1,3 +1,5 @@
+require 'gemologist/runtime_value'
+
 module Gemologist
   module AST
     module_function
@@ -14,6 +16,7 @@ module Gemologist
       when :regexp                  then concretize_regexp(node)
       when :array                   then concretize_array(node)
       when :hash                    then concretize_hash(node)
+      else                               RuntimeValue.new(node)
       end
     end
 

@@ -1,23 +1,9 @@
 require 'gemologist/ast'
 
 module Gemologist
-  RSpec.describe AST do
-    let(:node) do
-      require 'astrolabe/builder'
-      require 'parser/current'
-      builder = Astrolabe::Builder.new
-      parser = Parser::CurrentRuby.new(builder)
-      parser.parse(source_buffer)
-    end
-
-    let(:source_buffer) do
-      Parser::Source::Buffer.new('(string)').tap do |buffer|
-        buffer.source = source
-      end
-    end
-
+  RSpec.describe AST, :ast do
     describe '.concretize' do
-      subject { AST.concretize(node) }
+      subject(:concretized_value) { AST.concretize(node) }
 
       [
         true,
@@ -36,7 +22,26 @@ module Gemologist
       ].each do |value|
         context "with #{value.inspect} node" do
           let(:source) { value.inspect }
-          it { should eq(value) }
+
+          it "returns #{value.inspect}" do
+            expect(concretized_value).to eq(value)
+          end
+        end
+      end
+
+      context 'with a non-literal node' do
+        let(:source) { 'do_something' }
+
+        it 'returns a RuntimeValue' do
+          expect(concretized_value).to be_a(RuntimeValue)
+        end
+      end
+
+      context 'with an array node including non-literal element' do
+        let(:source) { '[1, do_something]' }
+
+        it 'returns an array including a RuntimeValue' do
+          expect(concretized_value).to match([1, an_instance_of(RuntimeValue)])
         end
       end
 
