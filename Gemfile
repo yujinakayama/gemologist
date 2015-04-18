@@ -3,13 +3,13 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'activesupport'
-  gem 'pry'
+  gem 'activesupport', '~> 4.2'
+  gem 'pry', '~> 0.10'
   gem 'rake', '~> 10.0'
-  gem 'rspec'
-  gem 'rubocop'
+  gem 'rspec', '~> 3.2'
+  gem 'rubocop', '~> 0.30'
 end
 
 group :test do
-  gem 'coveralls'
+  gem 'coveralls', '~> 0.8'
 end
