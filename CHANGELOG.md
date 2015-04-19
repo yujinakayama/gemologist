@@ -2,6 +2,8 @@
 
 ## Development
 
+* Deprecate `AbstractGemfile#rewrite!` in favor of `#save`.
+
 ## v0.1.1
 
 * Support Ruby 1.9.3.

@@ -18,5 +18,12 @@ module Gemologist
         expect(gemfile.dependencies).to all be_a(Gemfile::Dependency)
       end
     end
+
+    describe '#rewrite!' do
+      it 'is deprecated in favor of #save' do
+        expect(gemfile).to receive(:save)
+        expect { gemfile.rewrite! }.to output(/deprecated.+#save/).to_stderr
+      end
+    end
   end
 end

@@ -94,7 +94,7 @@ module Gemologist
 
           it 'adds the passed specifier' do
             dependency.version_specifiers = '~> 2.2'
-            gemspec.rewrite!
+            gemspec.save
             expect(rewritten_source).to eq(expected_source)
           end
         end
@@ -114,7 +114,7 @@ module Gemologist
 
           it 'replaces the existing specifier with the passed specifier' do
             dependency.version_specifiers = '> 4.0'
-            gemspec.rewrite!
+            gemspec.save
             expect(rewritten_source).to eq(expected_source)
           end
         end
@@ -134,7 +134,7 @@ module Gemologist
 
           it 'replaces the existing specifiers with the passed specifier' do
             dependency.version_specifiers = '~> 2.0'
-            gemspec.rewrite!
+            gemspec.save
             expect(rewritten_source).to eq(expected_source)
           end
         end
@@ -154,7 +154,7 @@ module Gemologist
 
           it 'replaces the existing specifiers with the passed specifier' do
             dependency.version_specifiers = '~> 2.0'
-            gemspec.rewrite!
+            gemspec.save
             expect(rewritten_source).to eq(expected_source)
           end
         end
@@ -174,7 +174,7 @@ module Gemologist
 
           it 'replaces the existing specifier with the passed specifier' do
             dependency.version_specifiers = ['>= 3.1', '< 4.0']
-            gemspec.rewrite!
+            gemspec.save
             expect(rewritten_source).to eq(expected_source)
           end
         end

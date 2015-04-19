@@ -1,3 +1,4 @@
+require 'gemologist/ui'
 require 'astrolabe/builder'
 require 'parser/current'
 
@@ -20,9 +21,14 @@ module Gemologist
       end
     end
 
-    def rewrite!
+    def save
       rewritten_source = source_rewriter.process
       File.write(path, rewritten_source)
+    end
+
+    def rewrite!
+      Gemologist::UI.deprecate("#{self.class.name}##{__method__}", replacement: '#save')
+      save
     end
 
     private
