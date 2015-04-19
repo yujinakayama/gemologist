@@ -2,6 +2,8 @@
 
 ## Development
 
+## v0.2.0
+
 * Deprecate `AbstractGemfile#rewrite!` in favor of `#save`.
 
 ## v0.1.1
