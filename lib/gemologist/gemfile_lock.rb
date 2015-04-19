@@ -1,3 +1,5 @@
+require 'bundler'
+
 module Gemologist
   class GemfileLock
     attr_reader :path
