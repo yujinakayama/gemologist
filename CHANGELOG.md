@@ -2,6 +2,8 @@
 
 ## Development
 
+* Add missing `astrolabe` dependency definition.
+
 ## v0.2.0
 
 * Deprecate `AbstractGemfile#rewrite!` in favor of `#save`.
