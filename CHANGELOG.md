@@ -2,6 +2,8 @@
 
 ## Development
 
+## v0.2.1
+
 * Add missing `astrolabe` dependency definition.
 
 ## v0.2.0
