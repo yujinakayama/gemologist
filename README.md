@@ -1,8 +1,8 @@
-[![Gem Version](http://img.shields.io/gem/v/gemologist.svg?style=flat)](http://badge.fury.io/rb/gemologist)
-[![Dependency Status](http://img.shields.io/gemnasium/yujinakayama/gemologist.svg?style=flat)](https://gemnasium.com/yujinakayama/gemologist)
+[![Gem Version](https://badge.fury.io/rb/gemologist.svg)](http://badge.fury.io/rb/gemologist)
+[![Dependency Status](https://gemnasium.com/yujinakayama/gemologist.svg)](https://gemnasium.com/yujinakayama/gemologist)
 [![Build Status](https://travis-ci.org/yujinakayama/gemologist.svg?branch=master&style=flat)](https://travis-ci.org/yujinakayama/gemologist)
-[![Coverage Status](https://coveralls.io/repos/yujinakayama/gemologist/badge.svg?branch=master)](https://coveralls.io/r/yujinakayama/gemologist?branch=master)
-[![Code Climate](https://img.shields.io/codeclimate/github/yujinakayama/gemologist.svg?style=flat)](https://codeclimate.com/github/yujinakayama/gemologist)
+[![Coverage Status](https://coveralls.io/repos/yujinakayama/gemologist/badge.svg?branch=master&service=github)](https://coveralls.io/github/yujinakayama/gemologist?branch=master)
+[![Code Climate](https://codeclimate.com/github/yujinakayama/gemologist/badges/gpa.svg)](https://codeclimate.com/github/yujinakayama/gemologist)
 
 # Gemologist
 
