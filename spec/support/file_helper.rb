@@ -11,7 +11,7 @@ module FileHelper
       case content
       when String then file.puts content
       when Array  then file.puts content.join("\n")
-      else fail 'Unsupported type!'
+      else raise 'Unsupported type!'
       end
     end
   end

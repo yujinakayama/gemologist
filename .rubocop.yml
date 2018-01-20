@@ -1,12 +1,29 @@
+inherit_from: .rubocop_todo.yml
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: separator
+
+Lint/BooleanSymbol:
+  Exclude:
+    - 'lib/gemologist/ast.rb'
+
+Lint/InterpolationCheck:
+  Exclude:
+    - 'spec/gemologist/ast_spec.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/ClassLength:
   Max: 150
 
 Metrics/LineLength:
   Max: 100
 
-Style/AlignHash:
-  EnforcedHashRocketStyle: table
-  EnforcedColonStyle: separator
+Naming/HeredocDelimiterNaming:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

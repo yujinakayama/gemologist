@@ -30,7 +30,7 @@ module Gemologist
       return RuntimeValue.new(regexp_node) unless body_nodes.all?(&:str_type?)
       string = body_nodes.map { |str_node| str_node.children.first }.reduce(:+)
       options = regopt_node.children.map(&:to_s).reduce(:+)
-      eval("/#{string}/#{options}") # rubocop:disable Eval
+      eval("/#{string}/#{options}", binding, __FILE__, __LINE__) # rubocop:disable Eval
     end
 
     def concretize_array(array_node)

@@ -34,7 +34,7 @@ module Gemologist
     private
 
     def dependency_class
-      fail NotImplementedError
+      raise NotImplementedError
     end
 
     def ast

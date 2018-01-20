@@ -11,11 +11,11 @@ module Gemologist
     end
 
     def self.method_names
-      fail NotImplementedError
+      raise NotImplementedError
     end
 
     def initialize(node, rewriter)
-      fail 'Invalid node.' unless self.class.valid_node?(node)
+      raise 'Invalid node.' unless self.class.valid_node?(node)
       @node = node
       @rewriter = rewriter
     end
@@ -25,7 +25,7 @@ module Gemologist
     end
 
     def groups
-      fail NotImplementedError
+      raise NotImplementedError
     end
 
     def version_specifiers
@@ -61,7 +61,7 @@ module Gemologist
     end
 
     def version_nodes
-      fail NotImplementedError
+      raise NotImplementedError
     end
 
     def version_range

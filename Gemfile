@@ -7,7 +7,7 @@ group :development, :test do
   gem 'pry', '~> 0.10'
   gem 'rake', '~> 10.0'
   gem 'rspec', '~> 3.2'
-  gem 'rubocop', '~> 0.30'
+  gem 'rubocop', '~> 0.52'
 end
 
 group :test do

@@ -71,17 +71,17 @@ module Gemologist
 
         context 'when the dependency is specified in :development and :test group' do
           let(:dependency) { gemfile.find_dependency('rake') }
-          it { should eq([:development, :test]) }
+          it { should eq(%i[development test]) }
         end
 
         context 'when the dependency is specified with group: [:test, :development] option' do
           let(:dependency) { gemfile.find_dependency('rspec') }
-          it { should eq([:test, :development]) }
+          it { should eq(%i[test development]) }
         end
 
         context 'when the dependency is specified with group: :test option in :development group' do
           let(:dependency) { gemfile.find_dependency('rubocop') }
-          it { should eq([:development, :test]) }
+          it { should eq(%i[development test]) }
         end
       end
 
