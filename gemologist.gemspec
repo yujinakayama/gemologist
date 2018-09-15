@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'astrolabe', '~> 1.3'
   spec.add_runtime_dependency 'bundler', '~> 1.7'
+  spec.add_runtime_dependency 'parser', '>= 2.5.0.0'
 end
