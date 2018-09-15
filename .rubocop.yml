@@ -3,10 +3,6 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   TargetRubyVersion: 2.3
 
-Layout/AlignHash:
-  EnforcedHashRocketStyle: table
-  EnforcedColonStyle: separator
-
 Lint/BooleanSymbol:
   Exclude:
     - 'lib/gemologist/ast.rb'
