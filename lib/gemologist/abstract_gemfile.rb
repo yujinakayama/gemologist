@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gemologist/ui'
 require 'astrolabe/builder'
 require 'parser/current'
@@ -17,6 +19,7 @@ module Gemologist
     def dependencies
       @dependencies ||= ast.each_node.with_object([]) do |node, dependencies|
         next unless dependency_class.valid_node?(node)
+
         dependencies << dependency_class.new(node, source_rewriter)
       end
     end

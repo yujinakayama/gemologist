@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gemologist/abstract_dependency'
 require 'gemologist/util'
 
@@ -24,6 +26,7 @@ module Gemologist
 
       def groups_via_block
         return [] unless group_node
+
         _receiver_node, _message, *arg_nodes = *group_node
         arg_nodes.map { |node| AST.concretize(node) }
       end
@@ -40,7 +43,7 @@ module Gemologist
       def options_node
         node = trailing_nodes.last
 
-        if node && node.hash_type?
+        if node&.hash_type?
           node
         else
           nil

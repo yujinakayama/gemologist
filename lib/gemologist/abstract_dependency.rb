@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gemologist/ast'
 
 module Gemologist
@@ -6,6 +8,7 @@ module Gemologist
 
     def self.valid_node?(node)
       return false unless node.send_type?
+
       _receiver_node, message, name_node, = *node
       method_names.include?(message) && name_node.str_type?
     end
@@ -16,6 +19,7 @@ module Gemologist
 
     def initialize(node, rewriter)
       raise 'Invalid node.' unless self.class.valid_node?(node)
+
       @node = node
       @rewriter = rewriter
     end

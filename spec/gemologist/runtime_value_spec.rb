@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gemologist/runtime_value'
 
 module Gemologist

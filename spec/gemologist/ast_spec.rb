@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gemologist/ast'
 
 module Gemologist

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gemologist
   class RuntimeValue
     attr_reader :node

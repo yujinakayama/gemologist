@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gemologist/abstract_gemfile'
 
 module Gemologist
