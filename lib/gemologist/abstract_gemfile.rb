@@ -49,7 +49,12 @@ module Gemologist
     end
 
     def source_rewriter
-      @source_rewriter ||= Parser::Source::Rewriter.new(source_buffer)
+      @source_rewriter ||= Parser::Source::TreeRewriter.new(
+        source_buffer,
+        crossing_deletions: :accept,
+        different_replacements: :raise,
+        swallowed_insertions: :raise
+      )
     end
 
     def source_buffer
